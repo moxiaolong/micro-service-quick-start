@@ -1,0 +1,77 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+microservice-config-client-cloud-bus/target/*
+microservice-config-client/target/*
+microservice-config/target/*
+microservice-discovery-eureka/target/*
+microservice-feign-customize/target/*
+microservice-feign/target/*
+microservice-gateway-zuul/target/*
+microservice-hystrixdashboard-turbine/target/*
+microservice-provide-user/target/*
+microservice-provide-user2/target/maven-archiver/*
+microservice-provide-user2/target/maven-status/*
+microservice-provide-user2/target/surefire-reports/*
+microservice-ribbon-hystrixdashboard/target/*
+microservice-ribbon/target/*
+microservice-sleuth-zipkin-server/target/*
+
+*.iml
+/.idea/*
+/log/
+target/
+*.project
+
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
