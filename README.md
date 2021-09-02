@@ -28,7 +28,9 @@ Druid面板地址：/druid/login.html Swagger地址：/document.html
 
 ## 领域驱动设计
 
-本项目遵循领域驱动设计（DDD）,不严格遵守MVC架构,如无事务控制需要,可越过Service直接使用DAO。 如非预料到大概率更换Service实现的可能，Service可以不使用接口。
+本项目遵循领域驱动设计（DDD）,可不严格遵守MVC架构,如无事务控制需要,可越过Service直接使用DAO。
+
+如非预料到大概率更换Service实现的可能，Service可以不使用接口。
 
 ## 数据库
 
