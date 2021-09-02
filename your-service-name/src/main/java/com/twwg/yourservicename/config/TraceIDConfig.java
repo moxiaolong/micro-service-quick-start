@@ -3,6 +3,7 @@ package com.twwg.yourservicename.config;
 import com.alibaba.nacos.common.util.UuidUtils;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 import org.springframework.context.annotation.Configuration;
@@ -21,12 +22,13 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2021/09/02
  */
 @Configuration
+@Slf4j
 public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, RequestInterceptor {
-     static final String TRACE_ID_FLAG = "traceId";
+    static final String TRACE_ID_FLAG = "traceId";
 
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String traceId = request.getHeader(TRACE_ID_FLAG);
         if (StringUtils.isEmpty(traceId)) {
             traceId = UuidUtils.generateUuid();
@@ -36,7 +38,7 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
     }
 
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
         String traceId = MDC.get(TRACE_ID_FLAG);
         if (traceId != null) {
             response.setHeader(TRACE_ID_FLAG, traceId);
