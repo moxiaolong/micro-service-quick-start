@@ -2,11 +2,14 @@ package com.twwg.yourservicename.config;
 
 import com.twwg.yourservicenameapi.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import static com.twwg.yourservicename.config.TraceIDConfig.TRACE_ID_FLAG;
 
 /**
  * 异常增强
@@ -30,9 +33,9 @@ public class ExceptionAdvice {
         log.error(exception.getMessage());
         Response<Object> response = new Response<>().setCode(500);
         if (PROD.equals(active)) {
-            return response.setMessage("服务器异常");
+            return response.setMessage("服务器异常,traceId:" + MDC.get(TRACE_ID_FLAG));
         }
-        return response.setMessage(exception.getMessage());
+        return response.setMessage(exception.getMessage() + ",traceId:" + MDC.get(TRACE_ID_FLAG));
     }
 
 }
