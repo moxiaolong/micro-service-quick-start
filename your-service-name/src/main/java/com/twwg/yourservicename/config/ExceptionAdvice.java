@@ -1,6 +1,7 @@
 package com.twwg.yourservicename.config;
 
 import com.twwg.yourservicenameapi.Response;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @date 2021/09/02
  */
 @RestControllerAdvice
+@Slf4j
 public class ExceptionAdvice {
 
     @Value("${spring.profiles.active}")
@@ -25,6 +27,7 @@ public class ExceptionAdvice {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Response<Object> onException(Exception exception) {
+        log.error(exception.getMessage());
         Response<Object> response = new Response<>().setCode(500);
         if (PROD.equals(active)) {
             return response.setMessage("服务器异常");

@@ -39,4 +39,12 @@ public interface UserFeign {
     @PostMapping("/")
     @ApiOperation("添加一个用户")
     Response<UserDto> post(@RequestBody UserDto userDto);
+
+    /**
+     * 调用时将会产生一个异常
+     *
+     * @return {@link Response}<{@link Integer}>
+     */
+    @GetMapping("/error")
+    Response<Integer> error();
 }

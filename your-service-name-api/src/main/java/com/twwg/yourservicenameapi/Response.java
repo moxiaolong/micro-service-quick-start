@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.springframework.http.HttpStatus;
 
 /**
  * 响应
@@ -17,7 +18,7 @@ import lombok.experimental.Accessors;
 public class Response<T> {
 
     @ApiModelProperty("响应状态，200：成功")
-    private Integer code = 200;
+    private Integer code = HttpStatus.OK.value();
     @ApiModelProperty("提示消息")
     private String message = "success";
     @ApiModelProperty("携带数据")

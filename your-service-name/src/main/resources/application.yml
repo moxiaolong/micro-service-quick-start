@@ -1,6 +1,33 @@
 spring:
   profiles:
-    active: local
+    active: local #激活环境，请勿更改，如需改变环境请通过启动参数传入
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #使用德鲁伊连接时
+    druid:
+      filter:
+        stat:
+          enabled: true
+          slow-sql-millis: 3000 #慢查询
+          merge-sql: true #相同sql统计
+        wall:
+          config:
+            show-allow: true #开启防火墙
+        slf4j:
+          enabled: true
+          statement-prepare-after-log-enabled: false
+      stat-view-servlet:
+        enabled: true #开启统计页面
+        login-username: druid
+        login-password: 123456
+        allow: 127.0.0.1 #访问白名单
+        url-pattern: /druid/* #统计页地址 /druid/login.html
+        reset-enable: true
   flyway:
     encoding: UTF-8
     clean-disabled: false
+logging:
+  config: classpath:logback-spring.xml
+  #level:
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #输出sql日志
