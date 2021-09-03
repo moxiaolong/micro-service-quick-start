@@ -1,6 +1,5 @@
 package com.twwg.yourservicename.config;
 
-import com.alibaba.nacos.common.util.UuidUtils;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
 
 /**
  * 跟踪 id Config
@@ -31,7 +31,7 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String traceId = request.getHeader(TRACE_ID_FLAG);
         if (StringUtils.isEmpty(traceId)) {
-            traceId = UuidUtils.generateUuid();
+            traceId = UUID.randomUUID().toString();
         }
         MDC.put(TraceIDConfig.TRACE_ID_FLAG, traceId);
         return true;

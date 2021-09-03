@@ -45,6 +45,6 @@ public interface UserFeign {
      *
      * @return {@link Response}<{@link Integer}>
      */
-    @GetMapping("/error")
+    @RequestMapping("/error")
     Response<Integer> error();
 }

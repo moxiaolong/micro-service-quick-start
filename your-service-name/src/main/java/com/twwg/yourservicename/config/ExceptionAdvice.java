@@ -1,6 +1,7 @@
 package com.twwg.yourservicename.config;
 
-import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twwg.yourservicenameapi.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -35,6 +37,9 @@ public class ExceptionAdvice {
 
     private static final String PROD = "prod";
 
+    @Resource
+    ObjectMapper objectMapper;
+
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -52,9 +57,13 @@ public class ExceptionAdvice {
                     e.printStackTrace();
                 }
             }
-            log.error("请求地址{},请求参数:{},请求体:{},异常信息:{}", requestUri,
-                    JSONObject.toJSONString(parameterMap),
-                    requestBody, exception.getMessage());
+            try {
+                log.error("请求地址{},请求参数:{},异常信息:{}请求体:{},", requestUri,
+                        objectMapper.writeValueAsString(parameterMap),
+                        exception.getMessage(), requestBody);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
         }
 
 
