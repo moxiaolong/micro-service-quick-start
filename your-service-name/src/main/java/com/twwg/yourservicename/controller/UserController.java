@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * 用户controller
@@ -32,10 +34,12 @@ public class UserController implements UserFeign {
 
     @Override
     public Response<UserDto> get(String name) {
-        UserDto userDto = new UserDto();
-        userDto.setName(name);
-
-        return new Response<>(userDto);
+        return new Response<>(
+                new UserDto()
+                        .setName(name)
+                        .setBirthday(LocalDate.now())
+                        .setCreatTime(LocalDateTime.now())
+        );
     }
 
     @Override

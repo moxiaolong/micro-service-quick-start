@@ -35,3 +35,9 @@ Druid面板地址：/druid/login.html Swagger地址：/document.html
 ## 数据库
 
 请尽量避免使用SQL写业务，避免使用连表、内查询。 使用MybatisPlus,尽量避免使用XML文件。
+
+## 日期和时间
+
+明确区分日期和时间类型，禁止使用Date类型，
+
+序列化格式 localDate:yyyy-MM-dd,LocalDateTime:yyyy-MM-ddTHH:mm:ss.S。
