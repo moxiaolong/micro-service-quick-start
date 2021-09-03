@@ -24,7 +24,12 @@ Druid面板地址：/druid/login.html Swagger地址：/document.html
 
 ## 日志查看说明
 
-日志存放位置./logs/web-error-%d{yyyy-MM-dd}.%i.log 保留10天，100M分页。 不同级别日志将分开保存。 日志查看接口/log/list ; /log 请求示例:
+日志存放位置./logs/web-error-%d{yyyy-MM-dd}.%i.log 保留15天，100M分页。
+
+不同级别日志将分开保存。
+
+日志查看接口/log/list ; /log 请求示例:
+
 /log?fileName=web_info.log&content=ERROR
 
 ## 配置文件
