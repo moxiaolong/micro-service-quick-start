@@ -26,7 +26,7 @@ public interface UserFeign {
      * @param name 的名字
      * @return {@link Response}<{@link UserDto}>
      */
-    @GetMapping("/")
+    @GetMapping
     @ApiOperation("获取一个用户")
     Response<UserDto> get(@Nullable @RequestParam @ApiParam("用户名参数") String name);
 
@@ -36,7 +36,7 @@ public interface UserFeign {
      * @param userDto 用户dto
      * @return {@link Response}<{@link UserDto}>
      */
-    @PostMapping("/")
+    @PostMapping
     @ApiOperation("添加一个用户")
     Response<UserDto> post(@RequestBody UserDto userDto);
 

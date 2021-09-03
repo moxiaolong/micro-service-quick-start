@@ -22,6 +22,11 @@ Druid面板地址：/druid/login.html Swagger地址：/document.html
 
 在非生产环境中将返回详细地异常信息和traceID。 如果需要使用全局异常处理，请将异常抛到Controller外， 在出现异常时将会打印请求地址，参数，请求体信息，以便追查问题。
 
+## 日志查看说明
+
+日志存放位置./logs/web-error-%d{yyyy-MM-dd}.%i.log 保留10天，100M分页。 不同级别日志将分开保存。 日志查看接口/log/list ; /log 请求示例:
+/log?fileName=web_info.log&content=ERROR
+
 ## 配置文件
 
 运行环境默认local,选择其他环境请通过JVM传参的方式修改,不要修改配置文件。

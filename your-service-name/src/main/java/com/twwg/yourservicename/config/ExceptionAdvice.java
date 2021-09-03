@@ -40,7 +40,6 @@ public class ExceptionAdvice {
     @Resource
     ObjectMapper objectMapper;
 
-
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Response<Object> onException(Exception exception,
