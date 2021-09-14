@@ -3,9 +3,9 @@ package com.twwg.yourservicename.controller;
 import com.twwg.yourservicename.config.ConfigManager;
 import com.twwg.yourservicename.dao.UserDao;
 import com.twwg.yourservicename.entity.User;
-import com.twwg.yourservicenameapi.Response;
-import com.twwg.yourservicenameapi.user.UserDto;
-import com.twwg.yourservicenameapi.user.UserFeign;
+import com.twwg.api.yourservicename.Response;
+import com.twwg.api.yourservicename.user.UserDto;
+import com.twwg.api.yourservicename.user.UserFeign;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

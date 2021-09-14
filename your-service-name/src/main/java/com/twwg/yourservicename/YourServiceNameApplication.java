@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 @EnableSwaggerMgUi //document.html
-@EnableFeignClients
+@EnableFeignClients("com.twwg.api.*")
 @MapperScan(basePackages = "com.twwg.*.dao")
 @EnableDiscoveryClient
 public class YourServiceNameApplication {

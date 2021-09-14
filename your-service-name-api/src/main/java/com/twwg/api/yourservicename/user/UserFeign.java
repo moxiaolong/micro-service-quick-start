@@ -1,6 +1,6 @@
-package com.twwg.yourservicenameapi.user;
+package com.twwg.api.yourservicename.user;
 
-import com.twwg.yourservicenameapi.Response;
+import com.twwg.api.yourservicename.Response;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

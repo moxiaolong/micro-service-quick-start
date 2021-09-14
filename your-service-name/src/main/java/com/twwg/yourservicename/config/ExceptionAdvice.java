@@ -2,7 +2,7 @@ package com.twwg.yourservicename.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.twwg.yourservicenameapi.Response;
+import com.twwg.api.yourservicename.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.MDC;
