@@ -10,13 +10,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * 应用程序
- *
+ * swagger地址： document.html
+ * 德鲁伊地址 /druid/login.html
  * @author dragon
  * @date 2021/09/01
  */
 @SpringBootApplication
 @EnableSwagger2
-@EnableSwaggerMgUi //document.html
+@EnableSwaggerMgUi
 @EnableFeignClients("com.twwg.api.*")
 @MapperScan(basePackages = "com.twwg.*.dao")
 @EnableDiscoveryClient
