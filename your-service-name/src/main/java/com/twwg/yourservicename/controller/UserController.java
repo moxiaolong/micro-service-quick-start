@@ -5,7 +5,8 @@ import com.twwg.yourservicename.dao.UserDao;
 import com.twwg.yourservicename.entity.User;
 import com.twwg.api.yourservicename.Response;
 import com.twwg.api.yourservicename.user.UserDto;
-import com.twwg.api.yourservicename.user.UserFeign;
+import com.twwg.api.yourservicename.user.UserApi;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ import java.time.LocalDateTime;
  * @date 2021/09/01
  */
 @RestController
-public class UserController implements UserFeign {
+public class UserController implements UserApi {
 
     @Resource
     ConfigManager configManager;

@@ -6,7 +6,9 @@
 
 ## Controller 与 Feign
 
-Feign中的name要和本项目配置name一致。 需要暴露的服务写在Feign中，Controller实现Feign接口，可以继承Feign上的webMVC注解和Swagger注解 为了简洁可优先在Feign上书写注解。
+Feign中的name要和本项目配置name一致。
+
+需要暴露的服务写在Api中，Controller实现Api接口，Feign继承Api，这样做是为了让Feign和Controller共享WebMVC注解和Swagger注解,避免同时维护两份导致不一致。
 
 ## 自带页面
 
