@@ -67,10 +67,11 @@ public class ExceptionAdvice {
 
 
         Response<Object> response = new Response<>().setCode(500);
+        //生产环境隐藏异常信息
         if (PROD.equals(active)) {
-            return response.setMessage("服务器异常,traceId:" + MDC.get(TRACE_ID_FLAG));
+            return response.setMessage("服务器异常");
         }
-        return response.setMessage(exception.getMessage() + ",traceId:" + MDC.get(TRACE_ID_FLAG));
+        return response.setMessage(exception.getMessage());
     }
 
 }

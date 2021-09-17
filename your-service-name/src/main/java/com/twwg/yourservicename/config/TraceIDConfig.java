@@ -27,6 +27,9 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
     static final String TRACE_ID_FLAG = "traceId";
 
 
+    /**
+     * 从请求头获取trace Id 如果没有就生成
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String traceId = request.getHeader(TRACE_ID_FLAG);
@@ -37,6 +40,9 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
         return true;
     }
 
+    /**
+     * 响应头携带trace Id
+     */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
         String traceId = MDC.get(TRACE_ID_FLAG);
@@ -51,6 +57,9 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
         registry.addInterceptor(this).addPathPatterns("/**");
     }
 
+    /**
+     * Feign调用时在请求头携带当前trace Id
+     */
     @Override
     public void apply(RequestTemplate requestTemplate) {
         requestTemplate.header(TRACE_ID_FLAG, MDC.get(TRACE_ID_FLAG));
