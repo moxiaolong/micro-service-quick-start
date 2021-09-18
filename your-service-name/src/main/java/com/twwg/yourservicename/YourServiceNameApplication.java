@@ -1,7 +1,6 @@
 package com.twwg.yourservicename;
 
 import com.mg.swagger.framework.configuration.EnableSwaggerMgUi;
-import com.twwg.common.core.EnableMicroServiceCommonConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
