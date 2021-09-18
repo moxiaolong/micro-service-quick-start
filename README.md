@@ -6,7 +6,7 @@
 
 # 快速开始
 
-准备一个nacos环境并修改配置文件一致，例如 docker run -d -p 8848:8848 --env MODE=standalone --name nacos nacos/nacos-server。
+准备一个nacos环境并修改配置一致，例如 docker run -d -p 8848:8848 --env MODE=standalone --name nacos nacos/nacos-server。
 
 准备一个mysql环境并修改配置一致，创建test库。 例如 docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql。
 
