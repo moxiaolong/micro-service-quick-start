@@ -2,6 +2,7 @@ package com.twwg.yourservicename.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
  * @author dragon
  * @date 2021/09/01
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class User extends Model<User> {
     private Long id;
