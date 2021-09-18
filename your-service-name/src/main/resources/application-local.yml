@@ -8,4 +8,4 @@ spring:
     baseline-on-migrate: true #自动建表
     enabled: true
 server:
-  port: 9999
+  port: 8080
