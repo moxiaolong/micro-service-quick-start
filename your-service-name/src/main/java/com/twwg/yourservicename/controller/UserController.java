@@ -29,8 +29,6 @@ public class UserController implements UserApi {
     @Resource
     ConfigManager configManager;
 
-    @Resource
-    UserDao userDao;
 
     @Override
     public Response<UserDto> get(String name) {
@@ -45,7 +43,7 @@ public class UserController implements UserApi {
     @Override
     public Response<UserDto> post(UserDto userDto) {
         User user = new User();
-        int insert = userDao.insert(user);
+        user.insert();
         return new Response<>(userDto);
     }
 

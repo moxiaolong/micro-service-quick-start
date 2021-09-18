@@ -1,5 +1,6 @@
 package com.twwg.yourservicename.entity;
 
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
 /**
@@ -10,6 +11,6 @@ import lombok.Data;
  * @date 2021/09/01
  */
 @Data
-public class User {
+public class User extends Model<User> {
     private Long id;
 }
