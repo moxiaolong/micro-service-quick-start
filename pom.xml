@@ -51,10 +51,7 @@
 
     </dependencies>
     <dependencyManagement>
-
-
         <dependencies>
-
             <!--base common 包括统一Response、traceId、统一异常处理、Feign的一些增强-->
             <dependency>
                 <groupId>com.twwg</groupId>
@@ -85,6 +82,28 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- 要将源码发布，需要加入这个插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 
 
 </project>
