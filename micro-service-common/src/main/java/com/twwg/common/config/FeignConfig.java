@@ -1,9 +1,10 @@
-package com.twwg.yourservicename.config;
+package com.twwg.common.config;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import feign.*;
+import com.twwg.common.exception.FeignException;
+import feign.Feign;
+import feign.Util;
 import feign.codec.ErrorDecoder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -71,9 +72,9 @@ public class FeignConfig implements WebMvcRegistrations {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                return new RuntimeException("Feign调用异常，异常信息解析失败");
+                return new FeignException("Feign调用异常，异常信息解析失败");
             }
-            return new RuntimeException(message);
+            return new FeignException(message);
         };
     }
 

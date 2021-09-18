@@ -1,4 +1,4 @@
-package com.twwg.api.yourservicename.user;
+package com.twwg.api.yourservicename;
 
 import org.springframework.cloud.openfeign.FeignClient;
 

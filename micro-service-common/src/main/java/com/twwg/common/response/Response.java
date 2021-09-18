@@ -1,4 +1,4 @@
-package com.twwg.api.yourservicename;
+package com.twwg.common.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

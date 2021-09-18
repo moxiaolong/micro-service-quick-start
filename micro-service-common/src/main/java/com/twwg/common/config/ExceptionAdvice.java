@@ -1,11 +1,10 @@
-package com.twwg.yourservicename.config;
+package com.twwg.common.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.twwg.api.yourservicename.Response;
+import com.twwg.common.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,8 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
-import static com.twwg.yourservicename.config.TraceIDConfig.TRACE_ID_FLAG;
 
 /**
  * 异常增强

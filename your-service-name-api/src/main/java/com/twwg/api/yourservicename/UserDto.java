@@ -1,4 +1,4 @@
-package com.twwg.api.yourservicename.user;
+package com.twwg.api.yourservicename;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

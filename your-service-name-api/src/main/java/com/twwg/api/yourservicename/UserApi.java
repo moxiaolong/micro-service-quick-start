@@ -1,10 +1,9 @@
-package com.twwg.api.yourservicename.user;
+package com.twwg.api.yourservicename;
 
-import com.twwg.api.yourservicename.Response;
+import com.twwg.common.response.Response;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 

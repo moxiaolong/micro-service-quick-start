@@ -1,12 +1,11 @@
 package com.twwg.yourservicename.controller;
 
-import com.twwg.yourservicename.config.ConfigManager;
+import com.twwg.api.yourservicename.UserApi;
+import com.twwg.api.yourservicename.UserDto;
+import com.twwg.common.response.Response;
 import com.twwg.yourservicename.dao.UserDao;
 import com.twwg.yourservicename.entity.User;
-import com.twwg.api.yourservicename.Response;
-import com.twwg.api.yourservicename.user.UserDto;
-import com.twwg.api.yourservicename.user.UserApi;
-import org.springframework.stereotype.Component;
+import com.twwg.yourservicename.config.ConfigManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

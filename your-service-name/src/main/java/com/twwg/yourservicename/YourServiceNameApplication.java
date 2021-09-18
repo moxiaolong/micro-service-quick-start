@@ -1,6 +1,7 @@
 package com.twwg.yourservicename;
 
 import com.mg.swagger.framework.configuration.EnableSwaggerMgUi;
+import com.twwg.common.core.EnableMicroServiceCommonConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * swagger地址： document.html
  * 德鲁伊地址 /druid/login.html
  * feign包应该遵循命名规范 com.twwg.api.service-name
+ *
  * @author dragon
  * @date 2021/09/01
  */
@@ -29,3 +31,5 @@ public class YourServiceNameApplication {
     }
 
 }
+
+

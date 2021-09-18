@@ -1,4 +1,4 @@
-package com.twwg.yourservicename.config;
+package com.twwg.common.config;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

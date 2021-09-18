@@ -21,6 +21,12 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--base common 包括统一Response、traceId、统一异常处理、Feign的一些增强-->
+        <dependency>
+            <groupId>com.twwg</groupId>
+            <artifactId>micro-service-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter</artifactId>
