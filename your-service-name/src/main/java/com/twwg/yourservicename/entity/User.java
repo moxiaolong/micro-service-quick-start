@@ -3,6 +3,8 @@ package com.twwg.yourservicename.entity;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 用户
  * mybatis可以不书写xml约束,按照驼峰命名自动映射,如非必要请不要使用xml
@@ -13,4 +15,9 @@ import lombok.Data;
 @Data
 public class User extends Model<User> {
     private Long id;
+
+    @Override
+    public Serializable pkVal() {
+        return this.id;
+    }
 }
