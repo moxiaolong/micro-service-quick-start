@@ -5,7 +5,7 @@ spring:
   profiles:
     active: local #激活环境，请勿更改，如需改变环境请通过启动参数传入
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource #使用德鲁伊连接时
+    type: com.alibaba.druid.pool.DruidDataSource #使用德鲁伊连接池
     druid:
       filter:
         stat:
@@ -17,7 +17,7 @@ spring:
             show-allow: true #开启防火墙
         slf4j:
           enabled: true
-          statement-prepare-after-log-enabled: false
+          statement-prepare-after-log-enabled: false #开始sql打印
       stat-view-servlet:
         enabled: true #开启统计页面
         login-username: druid
@@ -27,7 +27,7 @@ spring:
         reset-enable: true
   flyway:
     encoding: UTF-8
-    clean-disabled: false
+    clean-disabled: true #关闭自动删除
 logging:
   config: classpath:logback-spring.xml
   #level:
