@@ -83,6 +83,20 @@
         </dependencies>
     </dependencyManagement>
 
+
+    <distributionManagement>
+        <repository>
+            <id>local-test</id>
+            <url>http://192.168.1.138:8081/repository/test/</url>
+        </repository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>local-test</id>
+            <url>http://192.168.1.138:8081/repository/test/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <!-- 要将源码发布，需要加入这个插件 -->
