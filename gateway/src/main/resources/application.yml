@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: local #激活环境，请勿更改，如需改变环境请通过启动参数传入
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: y #唯一标识
+          uri: lb://your-service-name/ #转发地址
+          predicates:
+            - Path=/api/your-service-name/** #转发规则
+          filters:
+            - StripPrefix=1 # 转发之前去掉几层路径
+logging:
+  config: classpath:logback-spring.xml
+

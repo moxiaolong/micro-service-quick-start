@@ -10,11 +10,7 @@
     <packaging>pom</packaging>
 
 
-    <modules>
-        <module>your-service-name</module>
-        <module>your-service-name-api</module>
-        <module>micro-service-common</module>
-    </modules>
+
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

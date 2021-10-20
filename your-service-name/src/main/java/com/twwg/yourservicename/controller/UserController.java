@@ -6,6 +6,7 @@ import com.twwg.common.response.Response;
 import com.twwg.yourservicename.dao.UserDao;
 import com.twwg.yourservicename.entity.User;
 import com.twwg.yourservicename.config.ConfigManager;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ import java.time.LocalDateTime;
  * @date 2021/09/01
  */
 @RestController
+@Slf4j
 public class UserController implements UserApi {
 
     @Resource
@@ -32,6 +34,7 @@ public class UserController implements UserApi {
 
     @Override
     public Response<UserDto> get(String name) {
+        log.info(name);
         return new Response<>(
                 new UserDto()
                         .setName(name)
