@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @date 2021/09/01
  */
 
-@FeignClient(name = "your-service-name", path = "your-service-name")
+@FeignClient(name = "your-service-name", path = "your-service-name",contextId = "userFeign")
 public interface UserFeign extends UserApi {
 }
 
