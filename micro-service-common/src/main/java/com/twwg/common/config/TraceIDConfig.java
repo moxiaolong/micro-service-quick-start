@@ -37,6 +37,7 @@ public class TraceIDConfig implements HandlerInterceptor, WebMvcConfigurer, Requ
             traceId = UUID.randomUUID().toString();
         }
         MDC.put(TraceIDConfig.TRACE_ID_FLAG, traceId);
+        response.setHeader(TRACE_ID_FLAG, traceId);
         return true;
     }
 
